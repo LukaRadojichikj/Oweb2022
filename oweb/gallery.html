@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>
+            Gallery | Luka's site
+        </title>
+        <link rel = "stylesheet" type = "text/css"
+         href = "gallerycss.css">
+    </head>
+    <head>
+        <table id="table1">
+            <tr>
+                <td id="tabledata" style="text-align: left; vertical-align: top">
+                    <a href="./leva.jpg">
+                    <img id="images" src="./leva.jpg" class="levimg" style="margin-bottom: 2%"/>
+                    </a>
+                    <div id="picdesc">
+                        <img onclick="handleClick()" id="clickme1" src="./likebutton.jpg" class="like" name="button1" />
+                        <h5 class="liketext"></h5>
+                        <p id="likeCounter1">0</p>
+                    </div>
+    
+                </td>
+                <td id="tabledata" style="text-align: left; vertical-align: top; ">
+                    <a href="./centar.jpg">
+                    <img id="images" src="./centar.jpg" class="levimg" style="justify-content: right;"/>
+                    </a>
+                    <div id="picdesc">
+                        <img onclick="handleClick()" id="clickme2" src="./likebutton.jpg" class="like" name="button2" />
+                        <h5 class="liketext"></h5>
+                        <p id="likeCounter2">0</p>
+                    </div>
+    
+                </td>
+                <td id="tabledata" style="text-align: left; vertical-align: top; ">
+                    <a href="./desna.jpg">
+                    <img id="images" src="./desna.jpg" class="levimg" style="justify-content: right;"/>
+                    </a>
+                    <div id="picdesc">
+                        <img onclick="handleClick()" id="clickme3" src="./likebutton.jpg" class="like" name="button3" />
+                        <h5 class="liketext"></h5>
+                        <p id="likeCounter3">0</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            const button1 = document.getElementById("clickme1")
+            const button2 = document.getElementById("clickme2")
+            const button3 = document.getElementById("clickme3")
+            let count1 = Number(JSON.parse(localStorage.getItem('likes1'))) || 0;
+            let count2 = Number(JSON.parse(localStorage.getItem('likes2'))) || 0;
+            let count3 = Number(JSON.parse(localStorage.getItem('likes3'))) || 0;
+            const likeCounter1 = document.getElementById("likeCounter1")
+            const likeCounter2 = document.getElementById("likeCounter2")
+            const likeCounter3 = document.getElementById("likeCounter3")
+            const handleClick = () => {
+                const buttonName = event.target.name
+                console.log(buttonName)
+                if (buttonName === "button1") {
+                    count1 += 1
+                    likeCounter1.innerHTML = count1
+                    localStorage.setItem('likes1', count1);
+                }
+                if (buttonName === "button2") {
+                    count2 += 1
+                    likeCounter2.innerHTML = count2;
+                    localStorage.setItem('likes2', count2);
+                }
+                if (buttonName === "button3") {
+                    count3 += 1
+                    likeCounter3.innerHTML = count3;
+                    localStorage.setItem('likes3', count3);
+                }
+            }
+            const onLoad = () => {
+                let json1 = [];
+                let json2 = [];
+                let json3 = [];
+                let string1 = "";
+                let string2 = "";
+                let string3 = "";
+                let likeNum1 = JSON.parse(localStorage.getItem('likes1')) || 0;
+                let likeNum2 = JSON.parse(localStorage.getItem('likes2')) || 0;
+                let likeNum3 = JSON.parse(localStorage.getItem('likes3')) || 0;
+                document.getElementById("likeCounter1").innerHTML = likeNum1;
+                document.getElementById("likeCounter2").innerHTML = likeNum2;
+                document.getElementById("likeCounter3").innerHTML = likeNum3;
+                }
+
+        </script>
+
+    </head>
+</html>

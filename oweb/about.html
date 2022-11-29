@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        About | Luka's site
+    </title>
+    <link rel="stylesheet" type="text/css" href="aboutcss.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="home.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#movie">Movie</a>
+        <a href="#websites">Website</a>
+        <a href="#music">Music</a>
+    </nav>
+
+    <div class="content">
+        <section id="about" class="section">
+            <div class="p">
+                <p>Hello! My name is Luka and this is my first website. I'm a student at Ss. Cyril and Methodius
+                    University in Skopje.
+                    In my free time I like to play video games with my friends, procrastinate and go outside.
+                </p>
+            </div>
+        </section>
+
+        <section id="movie" class="section">
+            <div id="tl">
+                <div class="iframe">
+                    <h3>Inception</h3>
+                    <iframe width="400" height="200" src="https://www.youtube.com/embed/YoHD9XEInc0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h1><a href="https://www.imdb.com/title/tt1375666/" class="imdb-logo">IMDb</a></h1>
+                </div>
+            </div>
+            <div id="tr">
+                <div class="iframe">
+                    <h3>Interstellar</h3>
+                    <iframe width="400" height="200" src="https://www.youtube.com/embed/zSWdZVtXT7E"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h1><a href="https://www.imdb.com/title/tt0816692/" class="imdb-logo">IMDb</a></h1>
+                </div>
+            </div>
+            <div id="bl">
+                <div class="iframe">
+                    <h3>The Hangover</h3>
+                    <iframe width="400" height="200" src="https://www.youtube.com/embed/tcdUhdOlz9M"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h1><a href="https://www.imdb.com/title/tt1119646/" class="imdb-logo">IMDb</a></h1>
+                </div>
+            </div>
+            <div id="br">
+                <div class="iframe">
+                    <h3>The Shawshank Redemption</h3>
+                    <iframe width="400" height="200" src="https://www.youtube.com/embed/NmzuHjWmXOc"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <h1><a href="https://www.imdb.com/title/tt0111161/" class="imdb-logo">IMDb</a></h1>
+                </div>
+            </div>
+        </section>
+
+        <section id="websites" class="section">
+            <div id="tl">
+                <div class="iframe">
+                    <h3>Youtube</h3>
+                    <h2><a href="https://www.youtube.com">
+                    <img src="youtubebutton.png" alt="Home" style="width:450px;height:250px;"></a></h2>
+                </div>
+            </div>
+            <div id="tr">
+                <div class="iframe">
+                    <h3>Twitch</h3>
+                    <h2><a href="https://www.twitch.com">
+                    <img src="twitchbutton.png" alt="Home" style="width:450px;height:250px;"></a></h2>
+                </div>
+            </div>
+            <div id="bl">
+                <div class="iframe">
+                    <h3>Reddit</h3>
+                    <h2><a href="https://www.reddit.com">
+                    <img src="redditbutton.png" alt="Home" style="width:300px;height:250px;"></a></h2>
+                </div>
+            </div>
+            <div id="br">
+                <div class="iframe">
+                    <h3>FantasyPL</h3>
+                    <h2><a href="https://fantasy.premierleague.com/">
+                    <img src="fantasyplbutton.png" alt="Home" style="width:400px;height:250px;"></a></h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="music" class="section">
+                <div class="music">
+                    <iframe src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator"
+                        width="50%" height="360" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                    </iframe>
+                </div>
+        </section>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(".menu a").on('click', function () {
+                    $("html, body").animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 750);
+                });
+            });
+        </script>
+
+</body>
+
+</html>

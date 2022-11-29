@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Blog | Luka's site
+    </title>
+    <link rel="stylesheet" type="text/css" href="blogcss.css">
+</head>
+
+<body>
+    <h1>Share!</h1>
+    <h3>Title</h3>
+    <input type="text" placeholder="Title" id="naslov">
+    <h3>Text:</h3>
+    <textarea placeholder="Content" , id="sodrzina"></textarea>
+    <br>
+    <button class="postButton" type="button" onclick="post('novpost','naslov','sodrzina')">Post</button>
+    <div style="text-align: center; width: 50%; background-color: white;" id="submittedDiv"></div>
+
+    <script>
+        function post(mesto, naslov, sodrzina) {
+            event.preventDefault()
+            var currentTime = new Date();
+            var title = document.getElementById(naslov).value;
+            var sod = document.getElementById(sodrzina).value;
+            var content = "<p style='color:white; font-weight:bolder; margin-left:10px'>" + title + "</p><p style='color:lightgray; margin-left:10px'>" + sod + "</p>";
+
+            let submittedDiv = document.getElementById("submittedDiv")
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            let blogDate = document.getElementById("blogDate").value
+                if (localStorage.getItem("posts") === null) {
+                    num=0;
+                }
+                else{
+                    lastItem = posts[posts.length - 1];
+                    num=$(lastItem).attr("id");
+                    num++;
+                    console.log("IDto na last item e "+num);
+                }
+                let htmlString = "<div id='"+num+"'><h2 id='subject'> Title:" + title+ 
+                "</h2> <button class='brishikomentar'> X </button>" + 
+                '<p id="content" style="word-wrap: break-word;">' + sod + "</p>" + 
+                "<p id='ime'> Written by: "  + "</p>" + "<p id='date'> Date:" + blogDate + "</p>" +
+                "<hr></div>"
+
+                posts.push(htmlString)
+                localStorage.setItem('posts', JSON.stringify(posts))
+                let newString = "";
+                posts.forEach(element => {
+                    newString += element
+                    //newString += "<hr>"
+                });
+                submittedDiv.getElementById(mesto) = newString
+                console.log("posts = " + posts)
+        }
+    </script>
+</body>
